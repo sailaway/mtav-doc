@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="http://open.zhiyanxx.com/base-config/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>基础属性配置 - MTAV - 多轨道视频生成器</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u57fa\u7840\u5c5e\u6027\u914d\u7f6e";
+        var mkdocs_page_input_path = "base-config.md";
+        var mkdocs_page_url = "/base-config/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> MTAV - 多轨道视频生成器
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">介绍</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">MTAV介绍</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/">编译和安装</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick-start/">快速开始</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../contribute/">贡献和捐赠</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">配置文件</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../config-file/">配置文件概述</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">基础属性配置</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#width">width</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#height">height</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bgfile">bgFile</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bgcolor">bgColor</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fps">fps</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#framecount">frameCount</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outvideofile">outVideoFile</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tracker-config/">轨道配置</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../interpolator/">插值器</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">基本轨道类型</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../simple-image/">简单图像轨道</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../simple-video/">简单视频轨道</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">高级轨道</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../sphere-advance-tracker/">全景专业轨道</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">配置文件示例</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../examle-animation-logo/">漂浮LOGO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">MTAV - 多轨道视频生成器</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>配置文件 &raquo;</li>
+      <li>基础属性配置</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">基础属性配置</h1>
+<pre><code>{
+    &quot;width&quot;: 428,
+    &quot;height&quot;: 428,
+    &quot;bgFile&quot;:&quot;&quot;,
+    &quot;bgColor&quot;:&quot;#fff&quot;,
+    &quot;frameCount&quot;:120,
+    &quot;fps&quot;:24,
+    &quot;outVideoFile&quot;:&quot;/data/image-rotate.mp4&quot;,
+    ...
+}    
+</code></pre>
+<p>MTAV视频生成配置文件的基础属性主要用来指定输出视频的参数，参数有：</p>
+<h2 id="width">width</h2>
+<p>输出视频宽度，整数类型</p>
+<h2 id="height">height</h2>
+<p>输出视频高度，整数类型</p>
+<h2 id="bgfile">bgFile</h2>
+<p>输出视频的背景图片文件路径，字符类型。</p>
+<p><strong>背景图片文件的尺寸必须和输出视频宽高一致</strong></p>
+<h2 id="bgcolor">bgColor</h2>
+<p>输出视频的背景颜色，字符类型； 示例 "#000","#ff8899"</p>
+<p><strong>如果有配置 <code>bgFile</code> 属性， bgColor将被忽略</strong></p>
+<h2 id="fps">fps</h2>
+<p>输出视频的帧率，整数类型； 通常情况下生成普通视频，指定为24即可</p>
+<h2 id="framecount">frameCount</h2>
+<p>输出视频帧总数，整数类型； 用视频帧总数来指定视频时长，  视频时长 = frameCount / fps</p>
+<h2 id="outvideofile">outVideoFile</h2>
+<p>输出视频路径 字符类型</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../config-file/" class="btn btn-neutral float-left" title="配置文件概述"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tracker-config/" class="btn btn-neutral float-right" title="轨道配置">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../config-file/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tracker-config/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

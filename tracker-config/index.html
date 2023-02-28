@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="http://open.zhiyanxx.com/tracker-config/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>轨道配置 - MTAV - 多轨道视频生成器</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u8f68\u9053\u914d\u7f6e";
+        var mkdocs_page_input_path = "tracker-config.md";
+        var mkdocs_page_url = "/tracker-config/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> MTAV - 多轨道视频生成器
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">介绍</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">MTAV介绍</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/">编译和安装</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick-start/">快速开始</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../contribute/">贡献和捐赠</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">配置文件</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../config-file/">配置文件概述</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../base-config/">基础属性配置</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">轨道配置</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">轨道基础属性</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tracktype">trackType</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#startframe">startFrame</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#endframe">endFrame</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#input">素材(input)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#initproperties">渲染属性(initProperties)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">对齐点</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#alpha">alpha</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scale">scale</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rotate">rotate</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#animation">动画(animation)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#property">property</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#startoffsetframeendoffsetframe">startOffsetFrame/endOffsetFrame</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#startvalendval">startVal/endVal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interpolator">interpolator</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#intertype">interType</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../interpolator/">插值器</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">基本轨道类型</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../simple-image/">简单图像轨道</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../simple-video/">简单视频轨道</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">高级轨道</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../sphere-advance-tracker/">全景专业轨道</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">配置文件示例</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../examle-animation-logo/">漂浮LOGO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">MTAV - 多轨道视频生成器</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>配置文件 &raquo;</li>
+      <li>轨道配置</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">轨道配置</h1>
+<p>轨道列表是MTAV配置文件中的核心部分，如下图，轨道列表类似渲染轨道的集合，每个轨道都有在视频中出现的时间范围，以及在视频中的位置、透明度、旋转角度等基础渲染属性，不同类型的轨道确定了通过渲染属性形成视觉元素的规则。</p>
+<p><img alt="多轨道视频生成" src="../img/video-edit.jpg" /></p>
+<p>轨道主要由基本属性，素材，渲染属性以及动画四部分组成；</p>
+<pre><code>{   
+    ...
+    &quot;trackers&quot;:[{
+            &quot;trackType&quot;:&quot;simpleImage&quot;,
+            &quot;startFrame&quot;:0,
+            &quot;endFrame&quot;:120,
+            &quot;input&quot;:{
+                &quot;image&quot;:&quot;/data/6548-dst-50.jpg&quot;
+            },
+            &quot;initProperties&quot;:{
+                &quot;videoAlignPtX&quot;:0.5,
+                &quot;videoAlignPtY&quot;:0.5,
+                &quot;trackerAlignPtX&quot;:0.5,
+                &quot;trackerAlignPtY&quot;:0.5,
+                &quot;alpha&quot;:1,
+                &quot;scale&quot;:1,
+                &quot;rotate&quot;:0
+            },
+            &quot;animation&quot;:[
+                {
+                    &quot;property&quot;: &quot;rotate&quot;,
+                    &quot;startVal&quot;: 0,
+                    &quot;endVal&quot;: 3600,
+                    &quot;startOffsetFrame&quot;:0,
+                    &quot;endOffsetFrame&quot;:120,
+                    &quot;interpolator&quot;:{
+                        &quot;interType&quot;:&quot;linear&quot;
+                    }
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+<h2 id="_2">轨道基础属性</h2>
+<h3 id="tracktype">trackType</h3>
+<p>轨道类型， 不同的轨道类型确定了通过素材和渲染属性形成最终的视觉效果的逻辑</p>
+<h3 id="startframe">startFrame</h3>
+<p>轨道开始渲染帧索引； 从0开始，0代表在输出视频中从一开始就渲染。</p>
+<h3 id="endframe">endFrame</h3>
+<p>轨道结束渲染帧索引。</p>
+<p>从开始帧(包括开始帧)会出现该轨道的内容，一直到结束帧(包括结束帧)。</p>
+<h2 id="input">素材(input)</h2>
+<p>轨道渲染内容依赖的外部素材文件路径，不同轨道类型依赖的素材不同。具体可参考各个轨道详细文档</p>
+<h2 id="initproperties">渲染属性(initProperties)</h2>
+<p>渲染属性是一系列的属性值，配合素材(input) 一起决定了渲染内容的最终表现，所有轨道都有一些基础的渲染属性例如位置(通过对齐点表达)，透明度(alpha)，缩放(scale)，旋转(rotate)
+除了基础渲染属性外，不同的轨道还有一些各自独有的渲染属性，例如简单视频轨道(simpleVideo)的帧索引，具体可参照各个轨道的渲染属性文档</p>
+<h3 id="_3">对齐点</h3>
+<p>对齐点通过描述视频坐标系中点和轨道图像坐标系上点的重合关系来表达轨道图像内容的位置。
+视频坐标系中的点： VideoPoint(videoAlignPtX,videoAlignPtY)
+轨道图像坐标系中的点： TrackerPoint(trackerAlignPtX,trackerAlignPtY)</p>
+<p>视频坐标系原点在输出视频的左上方，向下为Y轴正方向，向右为X轴正方向
+轨道图像坐标系在轨道图像的左上方，坐标轴方向同视频坐标系</p>
+<p>视频坐标系和轨道图像坐标系中 videoAlignPtX,videoAlignPtY,trackerAlignPtX,trackerAlignPtY取值范围都是[0,1];
+即视频坐标系和轨道图像坐标系都是归一化的相对坐标系，单位长度为内容尺寸；</p>
+<p>videoAlignPtX=1 代表在输出视频的最右侧
+videoAlignPtY=1 代表在输出视频的最下方</p>
+<p>trackerAlignPtX=1 代表在轨道图像内容的最右侧
+trackerAlignPtY=1 代表在轨道图像内容的最下方</p>
+<p>为什么要用对齐点来描述轨道的位置？因为轨道图像随着视频时间会进行旋转缩放等动态过程，这时候轨道内容位置的需要一种灵活且表达能力更强的定义方式。</p>
+<p>举例，定义轨道图像中心在视频中央进行旋转缩放，那么只需要指定:</p>
+<p>VideoPoint(videoAlignPtX,videoAlignPtY) = (0.5,0.5)
+TrackerPoint(trackerAlignPtX,trackerAlignPtY) = (0.5,0.5) </p>
+<p>而无需关心轨道缩放前后，旋转前后的尺寸等状态变化</p>
+<h3 id="alpha">alpha</h3>
+<p>轨道图像的透明度, 取值范围[0,1];</p>
+<p>alpha=1 说明轨道图像内容完全不透明
+alpha=0 说明轨道图像内容完全透明，内容不可见</p>
+<h3 id="scale">scale</h3>
+<p>轨道图像内容缩放比例， (0,unlimited)
+scale=1 无需缩放，保持内容本来的尺寸
+scale &lt; 1 缩小； scale &gt; 1 放大</p>
+<h3 id="rotate">rotate</h3>
+<p>旋转角度，单位是角度；rotate描述的旋转是绕轨道图像的中心点进行的旋转</p>
+<p>顺时针方向旋转为正方向</p>
+<h2 id="animation">动画(animation)</h2>
+<p>MTAV中的动画都是指的属性动画，描述的是随着视频时间轴的推进，轨道属性随着时间推进如何进行变化
+一个轨道可以定义多个动画，因此轨道的动画(animation)是一个动画数组</p>
+<p>如下面的这个动画描述的是 rotate属性(property)，在轨道的初始帧之后0帧(startOffsetFrame)的时候开始进行变化，一直持续到初始帧之后120帧(endOffsetFrame)，这期间属性值从起始值(startVal)0以线性插值(interpolator)的方式变化到结束值(endVal)120</p>
+<pre><code>{
+    &quot;property&quot;: &quot;rotate&quot;,
+    &quot;startVal&quot;: 0,
+    &quot;endVal&quot;: 3600,
+    &quot;startOffsetFrame&quot;:0,
+    &quot;endOffsetFrame&quot;:120,
+    &quot;interpolator&quot;:{
+        &quot;interType&quot;:&quot;linear&quot;
+    }
+}
+</code></pre>
+<h3 id="property">property</h3>
+<p>每一个动画都是针对具体的某个渲染属性，property就指定了动画作用的具体属性名称</p>
+<h3 id="startoffsetframeendoffsetframe">startOffsetFrame/endOffsetFrame</h3>
+<p>startOffsetFrame/endOffsetFrame  起始帧/结束帧表示动画开始发生到结束的时间范围，它是相对于所在轨道的开始帧的偏移值。</p>
+<p>例如轨道startFrame=100, 其中某个动画startOffsetFrame=200, endOffsetFrame=300;
+说明该轨道在视频第100帧开始渲染，并且在视频第300(100+200)帧的时候开始该动画， 该动画在视频第400(100+300)帧时结束</p>
+<h3 id="startvalendval">startVal/endVal</h3>
+<p>startVal/endVal 表示动画的渲染属性在动画开始时/结束时的值。
+即动画指定的渲染属性的值将在动画期间从起始值变化到结束值。</p>
+<h3 id="interpolator">interpolator</h3>
+<p>插值器(interpolator) 描述的是渲染属性从起始值变化到结束值的变化过程，即渲染属性的取值跟随时间变化过程中，渲染属性的取值如何从起始值变化到结束值</p>
+<h4 id="intertype">interType</h4>
+<p>插值器类型， 不同插值器代表属性的不同变化过程，具体可参考 <a href="../interpolator/">插值器</a>。
+部分插值器带参数，可以通过参数控制插值变化过程。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../base-config/" class="btn btn-neutral float-left" title="基础属性配置"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../interpolator/" class="btn btn-neutral float-right" title="插值器">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../base-config/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../interpolator/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

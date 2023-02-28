@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="http://open.zhiyanxx.com/interpolator/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>插值器 - MTAV - 多轨道视频生成器</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u63d2\u503c\u5668";
+        var mkdocs_page_input_path = "interpolator.md";
+        var mkdocs_page_url = "/interpolator/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> MTAV - 多轨道视频生成器
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">介绍</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">MTAV介绍</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/">编译和安装</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick-start/">快速开始</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../contribute/">贡献和捐赠</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">配置文件</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../config-file/">配置文件概述</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../base-config/">基础属性配置</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tracker-config/">轨道配置</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">插值器</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#accelerate">accelerate 插值器</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#factor">参数 factor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#doublefactor">参数 doubleFactor</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#acceleratedecelerate">accelerateDecelerate 插值器</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#anticipate">anticipate 插值器</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tension">参数 tension</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#anticipateovershoot">anticipateOvershoot 插值器</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tension_1">参数 tension</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bounce">bounce 插值器</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cycle">cycle</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#cycles">参数 cycles</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#decelerate">decelerate 插值器</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#factor_1">参数 factor</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#overshoot">overshoot 插值器</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tension_2">参数 tension</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linear">linear 插值器</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#shake">shake 插值器</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#shakecycle">参数 shakeCycle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#friction">参数 friction</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">基本轨道类型</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../simple-image/">简单图像轨道</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../simple-video/">简单视频轨道</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">高级轨道</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../sphere-advance-tracker/">全景专业轨道</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">配置文件示例</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../examle-animation-logo/">漂浮LOGO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">MTAV - 多轨道视频生成器</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>配置文件 &raquo;</li>
+      <li>插值器</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">插值器</h1>
+<h2 id="accelerate">accelerate 插值器</h2>
+<p>加速插值器
+形状是抛物线的右半部分，起点缓慢，然后加速</p>
+<h3 id="factor">参数 factor</h3>
+<p>抛物线参数, 默认为1</p>
+<h3 id="doublefactor">参数 doubleFactor</h3>
+<p>抛物线参数, 默认为2</p>
+<p>两个抛物线参数，控制抛物线的陡缓程度</p>
+<h2 id="acceleratedecelerate">accelerateDecelerate 插值器</h2>
+<p>先加速后减速插值器
+余弦函数的半个周期，起点和终点增长缓慢，而中间快速增长</p>
+<h2 id="anticipate">anticipate 插值器</h2>
+<p>起始的时候往回一定值，而后再往前。</p>
+<h3 id="tension">参数 tension</h3>
+<p>默认为2.0</p>
+<h2 id="anticipateovershoot">anticipateOvershoot 插值器</h2>
+<p>起点往回一定值，然后往前，到终点再超出一定值，然后返回</p>
+<h3 id="tension_1">参数 tension</h3>
+<p>默认为3.0</p>
+<h2 id="bounce">bounce 插值器</h2>
+<p>类似于球掉落地面的效果</p>
+<h2 id="cycle">cycle</h2>
+<p>正弦曲线，循环播放cycles次。
+cycles取值为2，那么动画时间内函数有2个周期，也就是动画属性值重复变化2次</p>
+<h3 id="cycles">参数 cycles</h3>
+<p>默认为2</p>
+<h2 id="decelerate">decelerate 插值器</h2>
+<p>减速插值器</p>
+<h3 id="factor_1">参数 factor</h3>
+<p>默认为1</p>
+<h2 id="overshoot">overshoot 插值器</h2>
+<p>到终点再超出一定值，然后返回</p>
+<h3 id="tension_2">参数 tension</h3>
+<p>默认值为2.0</p>
+<h2 id="linear">linear 插值器</h2>
+<p>线性插值器</p>
+<h2 id="shake">shake 插值器</h2>
+<p>震荡插值
+类似悬挂小球的摆动效果</p>
+<h3 id="shakecycle">参数 shakeCycle</h3>
+<p>震荡周期，默认值为4</p>
+<h3 id="friction">参数 friction</h3>
+<p>默认值为 0.857
+一般 friction 设置为 ((2*shakeCycle-2)/(2*shakeCycle-1))</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../tracker-config/" class="btn btn-neutral float-left" title="轨道配置"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../simple-image/" class="btn btn-neutral float-right" title="简单图像轨道">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../tracker-config/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../simple-image/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
