@@ -2,57 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://open.zhiyanxx.com/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://open.zhiyanxx.com/base-config/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://open.zhiyanxx.com/config-file/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://open.zhiyanxx.com/contribute/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://open.zhiyanxx.com/examle-animation-logo/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://open.zhiyanxx.com/examle-fade-in/</loc>
+         <lastmod>2023-03-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://open.zhiyanxx.com/examle-image-rotate/</loc>
+         <lastmod>2023-03-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://open.zhiyanxx.com/examle-rotate-scale/</loc>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://open.zhiyanxx.com/install/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://open.zhiyanxx.com/interpolator/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://open.zhiyanxx.com/quick-start/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://open.zhiyanxx.com/simple-image/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://open.zhiyanxx.com/simple-video/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://open.zhiyanxx.com/tracker-config/</loc>
-         <lastmod>2023-03-01</lastmod>
+         <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
